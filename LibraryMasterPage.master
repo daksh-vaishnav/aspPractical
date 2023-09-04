@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LibraryMasterPage.master.cs" Inherits="LibraryMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>SRIMCA LIBRARY</title>
+    <!--  Bootstrap Style -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!--  Font-Awesome Style -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!--  Font-Awesome Animation Style -->
+    <link href="assets/css/font-awesome-animation.css" rel="stylesheet" />
+    <!--  Pretty Photo Style -->
+    <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
+    <!--  Google Font Style -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!--  Custom Style -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form2" runat="server">
+
+        <div class="navbar navbar-default navbar-fixed-top menu-back">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/img/logo.png" class="navbar-brand-logo " alt="" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <asp:HyperLink ID="hlhome" runat="server" NavigateUrl="~/home.aspx">HOME</asp:HyperLink>
+                        </li>
+                        <li class="dropdown">
+                            <asp:HyperLink ID="hlstudent" runat="server">STUDENT</asp:HyperLink>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li>
+                                    <asp:HyperLink ID="hladdstudent" runat="server" NavigateUrl="~/student.aspx"><i class="fa fa-tag"></i>ADD NEW STUDENT</asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="hlstud_show" runat="server" NavigateUrl="~/stud_show.aspx"><i class="fa fa-bullhorn"></i>OLD STUDENT
+                                    </asp:HyperLink>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">TRANSACTION
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li>
+                                    <asp:HyperLink ID="hlissu_book" runat="server" NavigateUrl="~/issu_book.aspx"><i class="fa fa-tag"></i>ISSUE BOOK
+                                    </asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="hlreturnbook" runat="server" NavigateUrl="~/return_book.aspx"><i class="fa fa-bullhorn"></i>RETURN BOOK
+                                    </asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="hlfine" runat="server" NavigateUrl="~/fine.aspx"><i class="fa fa-paperclip"></i>FINES
+                                    </asp:HyperLink>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">BOOK 
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li>
+                                    <asp:HyperLink ID="hladdbook" runat="server" NavigateUrl="~/book.aspx">
+                                    <i class="fa fa-power-off"></i>ADD NEW BOOK
+                                    </asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="hlbook_show" runat="server" NavigateUrl="~/book_show.aspx">
+                                    <i class="fa fa-tag"></i>AVAILABLE BOOKS
+                                    </asp:HyperLink>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <asp:HyperLink ID="hlmodellogouts" runat="server" data-toggle="modal" data-target="#myModal">LOGOUT
+                            </asp:HyperLink>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="div-social-top">
+                <i class="fa fa-globe "></i>E-mail: 
+                <asp:HyperLink ID="HyperLink1"
+                    runat="server" ForeColor="#FF6700" NavigateUrl="~/My protfolio/HTML/index.html"
+                    Font-Size="Larger">sevenstarD_vaishnav.com</asp:HyperLink>
+                | <i class="fa fa-mobile "></i>Call : +91 8000 179 479  |  <i class="fa fa-map-marker "></i>Country : India &nbsp;
+                      <a href="#">
+                          <i class="fa fa-facebook-square "></i>
+                      </a>
+                <a href="#">
+                    <i class="fa fa-linkedin-square "></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-pinterest-square "></i>
+                </a>
+            </div>
+        </div>
+        <!--./ logout Menu -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" class="text-center" style="color: #ff6a00">ARE YOU SURE!!! </h4>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="text-center">
+                            <asp:HyperLink ID="hlstaylogin" runat="server" class="btn-primary" data-dismiss="modal">STAY LOGIN</asp:HyperLink>
+                            <asp:HyperLink ID="hllogout" runat="server" class="btn-primary"
+                                NavigateUrl="~/login.aspx">LOG OUT</asp:HyperLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /. NAV SIDE  -->
+        <div class="div-social-top">
+        </div>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!--./ footer-sec  End -->
+            <div id="footser-end">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            2018 All Rights Reserved | by : <a href="http://srimca.edu.in/" style="color: #ff6a00" target="_blank" >SRIMCA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--./ footer-end End -->
+    <!--  Jquery Core Script -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!--  Core Bootstrap Script -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+    <!-- DATA TABLE SCRIPTS -->
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
+</body>
+</html>
